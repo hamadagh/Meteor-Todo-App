@@ -2,11 +2,12 @@ import { Template } from "meteor/templating";
 
 import { Tasks } from "../api/tasks";
 
+import "./task.js";
 import "./body.html";
 
 Template.body.helpers({
   tasks() {
-    return Tasks.find({});
+    return Tasks.find({}, { sort: { createdAt: -1 } });
   },
 });
 
