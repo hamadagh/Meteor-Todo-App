@@ -58,6 +58,7 @@ ul {
   padding: 0;
 
   display: flex;
+  flex-wrap: wrap;
 }
 
 .delete {
@@ -73,8 +74,11 @@ li {
   position: relative;
   list-style: none;
   padding: 15px;
-  border: #eee solid 1px;
-  width: auto;
+  background-color: rgb(249, 249, 249);
+  border-radius: 7px;
+  width: 25%;
+  height: 13vh;
+  margin: 25px;
 }
 
 li .text {
