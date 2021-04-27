@@ -1,23 +1,31 @@
 <body>
   <div class="container">
     <header>
-      <h1>Todo List ({{incompleteCount}})</h1>
+      <div class="header-title">
+        {{> loginButtons}}
+        <span class="title">Todo List ({{incompleteCount}})</span>
+      </div>
 
-      <label class="hide-completed">
-        <input type="checkbox" />
-        Hide Completed Tasks
-      </label>
-
-      {{> loginButtons}} {{#if currentUser}}
+      {{#if currentUser}}
       <form class="new-task">
-        <input type="text" name="text" placeholder="Type to add new tasks" />
-        <select required name="select">
-          <option selected>Frontend</option>
-          <option>Backend</option>
-          <option>Design</option>
-        </select>
+        <div>
+          <input type="text" name="text" placeholder="Type to add new tasks" />
+          <select required name="select" class="task-category">
+            <option selected>Frontend</option>
+            <option>Backend</option>
+            <option>Design</option>
+          </select>
+        </div>
+
+        <button class="task-submit">Submit</button>
       </form>
       {{/if}}
+      <!-- <div class="header-filters">
+        <label class="hide-completed">
+          <input type="checkbox" />
+          Hide Completed Tasks
+        </label>
+      </div> -->
     </header>
 
     <ul>
