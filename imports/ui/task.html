@@ -1,6 +1,6 @@
 <template name="task">
-  <li class="{{#if checked}}checked{{/if}} task-container">
-    <div class="checkbox-container">
+  <li class="{{#if checked}}checked{{/if}} task-container {{selection}}">
+    <div class="checkbox-container {{selection}}">
       <label class="checkbox-label">
         <input
           type="checkbox"
@@ -10,18 +10,21 @@
         <span class="checkmark"></span>
       </label>
     </div>
-    <div>
-      <button class="delete">&times;</button>
+    <div class="task-body-container">
+      <div class="task-contents">
+        <span>{{text}}</span>
+        <span>{{username}}</span>
+        <span>{{selection}}</span>
+      </div>
 
       {{#if isOwner}}
       <button class="toggle-private">
         {{#if private}} Private {{else}} Public {{/if}}
       </button>
       {{/if}}
-
-      <span class="text {{selection}}"
-        ><strong>{{username}}</strong> - {{text}} - {{selection}}</span
-      >
+    </div>
+    <div class="task-delete">
+      <button class="delete">&times;</button>
     </div>
   </li>
 </template>
