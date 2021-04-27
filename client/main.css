@@ -1,6 +1,5 @@
 body {
   font-family: sans-serif;
-  background-color: #17171f;
   width: 100%;
   height: 100vh;
   padding: 0;
@@ -13,7 +12,7 @@ body {
   width: 100%;
   margin: 0 auto;
   min-height: 100%;
-  background-color: #c0cbf7;
+  background-color: #f6f8ff;
 }
 
 header {
@@ -74,7 +73,7 @@ li {
   position: relative;
   list-style: none;
   padding: 15px;
-  background-color: rgb(249, 249, 249);
+  background-color: rgb(255, 255, 255);
   border-radius: 7px;
   width: 25%;
   min-width: 370px;
@@ -125,6 +124,12 @@ header .hide-completed {
 .task-container {
   display: flex;
 }
+.task-body-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .checkbox-container {
   width: 20%;
   height: 100%;
@@ -144,11 +149,10 @@ header .hide-completed {
 }
 .checkmark {
   position: absolute;
-  top: 35px;
+  top: 15px;
   left: 10px;
   height: 40px;
   width: 40px;
-  background-color: aqua;
   border-radius: 50%;
 }
 
@@ -195,4 +199,13 @@ header .hide-completed {
 }
 .checkbox-container.Design {
   border-left: 3px solid rgb(90, 114, 255);
+}
+.checkmark.Frontend {
+  background-color: rgba(114, 250, 134, 0.2);
+}
+.checkmark.Backend {
+  background-color: rgba(255, 196, 3, 0.2);
+}
+.checkmark.Design {
+  background-color: rgba(90, 114, 255, 0.2);
 }
