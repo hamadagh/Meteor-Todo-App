@@ -36,10 +36,13 @@ Template.body.events({
 
     const target = event.target;
     const text = target.text.value;
+    const selection = target.select.value;
 
-    Meteor.call("tasks.insert", text);
+    if (text !== "") {
+      Meteor.call("tasks.insert", text, selection);
 
-    target.text.value = "";
+      target.text.value = "";
+    }
   },
   "change .hide-completed input"(event, instance) {
     instance.state.set("hideCompleted", event.target.checked);

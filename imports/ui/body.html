@@ -11,6 +11,11 @@
       {{> loginButtons}} {{#if currentUser}}
       <form class="new-task">
         <input type="text" name="text" placeholder="Type to add new tasks" />
+        <select required name="select">
+          <option selected>Frontend</option>
+          <option>2</option>
+          <option>3</option>
+        </select>
       </form>
       {{/if}}
     </header>

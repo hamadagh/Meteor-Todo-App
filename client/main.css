@@ -120,3 +120,37 @@ header .hide-completed {
     padding-bottom: 5px;
   }
 }
+
+.task-container {
+  display: flex;
+}
+.checkbox-container {
+  width: 30%;
+  height: 100%;
+}
+.checkbox-label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+.checkbox-container .complete-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 35px;
+  left: 10px;
+  height: 35px;
+  width: 35px;
+  background-color: aqua;
+  border-radius: 50%;
+}
+
+.checkbox-label input:checked ~ .checkmark {
+  background-color: brown;
+}
