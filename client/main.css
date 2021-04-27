@@ -145,12 +145,30 @@ header .hide-completed {
   position: absolute;
   top: 35px;
   left: 10px;
-  height: 35px;
-  width: 35px;
+  height: 40px;
+  width: 40px;
   background-color: aqua;
   border-radius: 50%;
 }
 
 .checkbox-label input:checked ~ .checkmark {
   background-color: brown;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.checkbox-label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-label .checkmark:after {
+  left: 13px;
+  top: 5px;
+  width: 9px;
+  height: 20px;
+  border: solid white;
+  border-width: 0 4px 4px 0;
+  transform: rotate(45deg);
 }
