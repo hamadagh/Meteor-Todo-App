@@ -17,19 +17,20 @@
           </select>
         </div>
 
-        <button class="task-submit">Submit</button>
+        <button class="task-submit" type="submit">Submit</button>
       </form>
       {{/if}}
-      <!-- <div class="header-filters">
+      <div class="header-filters">
         <label class="hide-completed">
           <input type="checkbox" />
           Hide Completed Tasks
         </label>
-      </div> -->
+      </div>
     </header>
 
     <ul>
       {{#each tasks}} {{> task}} {{/each}}
     </ul>
   </div>
+  <div class="side-bar">{{currentUser}}</div>
 </body>

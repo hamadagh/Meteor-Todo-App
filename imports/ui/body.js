@@ -3,6 +3,7 @@ import { Template } from "meteor/templating";
 import { ReactiveDict } from "meteor/reactive-dict";
 
 import { Tasks } from "../api/tasks";
+import { AllUsers } from "../api/tasks";
 
 import "./task.js";
 import "./body.html";
@@ -10,6 +11,7 @@ import "./body.html";
 Template.body.onCreated(function bodyOnCreated() {
   this.state = new ReactiveDict();
   Meteor.subscribe("tasks");
+  Meteor.subscribe("allUsers");
 });
 
 Template.body.helpers({
@@ -27,6 +29,9 @@ Template.body.helpers({
   },
   incompleteCount() {
     return Tasks.find({ checked: { $ne: true } }).count();
+  },
+  allUsers() {
+    return Meteor.users.find();
   },
 });
 
