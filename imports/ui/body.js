@@ -24,13 +24,17 @@ Template.body.helpers({
         { sort: { createdAt: -1 } }
       );
     }
+    if (instance.state.get("showFrontendTasks")) {
+      return Tasks.find({ selection: { $eq: "Frontend" } });
+    }
     // Otherwise, return all of the tasks
     return Tasks.find({}, { sort: { createdAt: -1 } });
   },
+
   incompleteCount() {
     return Tasks.find({ checked: { $ne: true } }).count();
   },
-  allUsers() {
+  users() {
     return Meteor.users.find();
   },
 });
@@ -51,5 +55,8 @@ Template.body.events({
   },
   "change .hide-completed input"(event, instance) {
     instance.state.set("hideCompleted", event.target.checked);
+  },
+  "change .show-frontend-tasks input"(event, instance) {
+    instance.state.set("showFrontendTasks", event.target.checked);
   },
 });

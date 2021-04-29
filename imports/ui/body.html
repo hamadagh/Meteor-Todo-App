@@ -20,10 +20,30 @@
         <button class="task-submit" type="submit">Submit</button>
       </form>
       {{/if}}
+      <span class="user-title">Users</span>
+      <div class="users-container">
+        {{#each users}}
+        <span class="username">{{username}}</span>
+        {{/each}}
+      </div>
+      <span class="filter-title">Filters</span>
       <div class="header-filters">
         <label class="hide-completed">
           <input type="checkbox" />
           Hide Completed Tasks
+        </label>
+
+        <label class="show-frontend-tasks">
+          <input type="checkbox" />
+          Frontend
+        </label>
+        <label class="show-backend-tasks">
+          <input type="checkbox" />
+          Backend
+        </label>
+        <label class="show-design-tasks">
+          <input type="checkbox" />
+          Design
         </label>
       </div>
     </header>
@@ -32,5 +52,4 @@
       {{#each tasks}} {{> task}} {{/each}}
     </ul>
   </div>
-  <div class="side-bar">{{currentUser}}</div>
 </body>
