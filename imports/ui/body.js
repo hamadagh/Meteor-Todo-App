@@ -15,26 +15,50 @@ Template.body.onCreated(function bodyOnCreated() {
 });
 
 Template.body.helpers({
-  tasks() {
+  frontendTasks() {
     const instance = Template.instance();
     if (instance.state.get("hideCompleted")) {
       // If hide completed is checked, filter tasks
       return Tasks.find(
-        { checked: { $ne: true } },
+        { checked: { $ne: true }, selection: { $eq: "Frontend" } },
         { sort: { createdAt: -1 } }
       );
     }
     // Otherwise, return all of the tasks
-    return Tasks.find({}, { sort: { createdAt: -1 } });
-  },
-  frontendTasks() {
-    return Tasks.find({ selection: { $eq: "Frontend" } });
+    return Tasks.find(
+      { selection: { $eq: "Frontend" } },
+      { sort: { createdAt: -1 } }
+    );
   },
   backendTasks() {
-    return Tasks.find({ selection: { $eq: "Backend" } });
+    const instance = Template.instance();
+    if (instance.state.get("hideCompleted")) {
+      // If hide completed is checked, filter tasks
+      return Tasks.find(
+        { checked: { $ne: true }, selection: { $eq: "Backend" } },
+        { sort: { createdAt: -1 } }
+      );
+    }
+    // Otherwise, return all of the tasks
+    return Tasks.find(
+      { selection: { $eq: "Backend" } },
+      { sort: { createdAt: -1 } }
+    );
   },
   designTasks() {
-    return Tasks.find({ selection: { $eq: "Design" } });
+    const instance = Template.instance();
+    if (instance.state.get("hideCompleted")) {
+      // If hide completed is checked, filter tasks
+      return Tasks.find(
+        { checked: { $ne: true }, selection: { $eq: "Design" } },
+        { sort: { createdAt: -1 } }
+      );
+    }
+    // Otherwise, return all of the tasks
+    return Tasks.find(
+      { selection: { $eq: "Design" } },
+      { sort: { createdAt: -1 } }
+    );
   },
 
   incompleteCount() {
