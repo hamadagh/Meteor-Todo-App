@@ -18,9 +18,11 @@
       </div>
 
       {{#if isOwner}}
-      <button class="toggle-private">
+      <label class="switch-button">
+        <input type="checkbox" class="toggle-private" />
+        <span class="slider round"></span>
         {{#if private}} Private {{else}} Public {{/if}}
-      </button>
+      </label>
       {{/if}}
     </div>
     <div class="task-delete">
