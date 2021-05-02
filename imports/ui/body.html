@@ -32,24 +32,21 @@
           <input type="checkbox" />
           Hide Completed Tasks
         </label>
-
-        <label class="show-frontend-tasks">
-          <input type="checkbox" />
-          Frontend
-        </label>
-        <label class="show-backend-tasks">
-          <input type="checkbox" />
-          Backend
-        </label>
-        <label class="show-design-tasks">
-          <input type="checkbox" />
-          Design
-        </label>
       </div>
     </header>
-
-    <ul>
-      {{#each tasks}} {{> task}} {{/each}}
-    </ul>
+    <div class="task-categories">
+      <ul class="category">
+        <h2 class="category-title">Frontend</h2>
+        {{#each frontendTasks}} {{> task}} {{/each}}
+      </ul>
+      <ul class="category">
+        <h2 class="category-title">Backend</h2>
+        {{#each backendTasks}} {{> task}} {{/each}}
+      </ul>
+      <ul class="category">
+        <h2 class="category-title">Design</h2>
+        {{#each designTasks}} {{> task}} {{/each}}
+      </ul>
+    </div>
   </div>
 </body>

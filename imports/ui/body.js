@@ -24,11 +24,17 @@ Template.body.helpers({
         { sort: { createdAt: -1 } }
       );
     }
-    if (instance.state.get("showFrontendTasks")) {
-      return Tasks.find({ selection: { $eq: "Frontend" } });
-    }
     // Otherwise, return all of the tasks
     return Tasks.find({}, { sort: { createdAt: -1 } });
+  },
+  frontendTasks() {
+    return Tasks.find({ selection: { $eq: "Frontend" } });
+  },
+  backendTasks() {
+    return Tasks.find({ selection: { $eq: "Backend" } });
+  },
+  designTasks() {
+    return Tasks.find({ selection: { $eq: "Design" } });
   },
 
   incompleteCount() {
@@ -36,6 +42,7 @@ Template.body.helpers({
   },
   users() {
     return Meteor.users.find();
+    console.log(Meteor.users.find());
   },
 });
 
@@ -58,5 +65,11 @@ Template.body.events({
   },
   "change .show-frontend-tasks input"(event, instance) {
     instance.state.set("showFrontendTasks", event.target.checked);
+  },
+  "change .show-backend-tasks input"(event, instance) {
+    instance.state.set("showBackendTasks", event.target.checked);
+  },
+  "change .show-design-tasks input"(event, instance) {
+    instance.state.set("showDesignTasks", event.target.checked);
   },
 });

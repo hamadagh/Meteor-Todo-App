@@ -263,3 +263,11 @@ li.private {
   padding: 7px;
   margin-right: 10px;
 }
+
+.task-categories {
+  display: flex;
+}
+.category {
+  display: flex;
+  flex-direction: column;
+}
