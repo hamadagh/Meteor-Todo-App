@@ -46,11 +46,11 @@ h1 {
 
 .new-task {
   display: flex;
-  flex-direction: column;
-  width: auto;
-  height: 100px;
-  margin-right: 30px;
-  margin-left: 30px;
+
+  width: 80%;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .new-task input {
@@ -60,7 +60,7 @@ h1 {
   background: transparent;
   border: 1px solid blue;
   border-radius: 4px;
-  width: 65%;
+  width: 100%;
 
   font-size: 1em;
 }
@@ -73,9 +73,8 @@ h1 {
   height: 40px;
   background: transparent;
   border: 1px solid blue;
-  width: 34%;
+  width: 100%;
   border-radius: 4px;
-  margin-left: 5px;
 }
 
 .task-submit {
@@ -85,9 +84,9 @@ h1 {
   width: 100%;
   color: white;
   font-size: 18px;
-  margin-right: 30px;
+
   border-radius: 4px;
-  margin-top: 10px;
+
   cursor: pointer;
 }
 ul {
@@ -113,10 +112,11 @@ li {
   padding: 15px;
   background-color: rgb(255, 255, 255);
   border-radius: 7px;
-  width: 25%;
-  min-width: 370px;
+  border: 2px solid rgb(255, 255, 255);
+  width: 75%;
   height: 13vh;
-  margin: 25px;
+  max-height: 150px;
+  margin: 10px auto 10px auto;
 }
 
 li .text {
@@ -131,18 +131,8 @@ li.checked .text {
   text-decoration: line-through;
 }
 
-li.private {
-  background: #eee;
-  border-color: #ddd;
-}
-
 .hide-completed {
   margin: 30px;
-}
-
-.toggle-private {
-  background-color: transparent;
-  border: 1px solid blue;
 }
 
 @media (max-width: 600px) {
@@ -251,13 +241,14 @@ li.private {
 
 .users-container {
   display: flex;
-  margin: 30px;
+  margin: 10px auto 10px auto;
+  width: 80%;
 }
-.user-title,
-.filter-title {
+
+.user-title {
   font-size: 25px;
   font-weight: bolder;
-  margin-left: 30px;
+  margin-right: 30px;
 }
 .username {
   border: 1px solid blue;
@@ -267,12 +258,18 @@ li.private {
 
 .task-categories {
   display: flex;
+  justify-content: space-evenly;
+  width: 100%;
 }
 .category {
   display: flex;
   flex-direction: column;
   text-align: center;
+  width: 30%;
 }
+/* Task Style */
+
+/* Toggle private Switch button */
 
 /* Toggle private Switch button */
 
@@ -326,5 +323,9 @@ li.private {
 .slider.round:before {
   border-radius: 50%;
 }
+.private {
+  border: 2px solid orangered;
+}
+/* ---------Toggle private Switch button--------- */
 
-/* ------------------- */
+/* ---------Task Style --------- */

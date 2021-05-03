@@ -4,34 +4,32 @@
       <div class="header-title">
         {{> loginButtons}}
         <span class="title">Todo List ({{incompleteCount}})</span>
+        <div class="header-filters">
+          <label class="hide-completed">
+            <input type="checkbox" />
+            Hide Completed Tasks
+          </label>
+        </div>
       </div>
 
       {{#if currentUser}}
       <form class="new-task">
-        <div>
-          <input type="text" name="text" placeholder="Type to add new tasks" />
-          <select required name="select" class="task-category">
-            <option selected>Frontend</option>
-            <option>Backend</option>
-            <option>Design</option>
-          </select>
-        </div>
+        <input type="text" name="text" placeholder="Type to add new tasks" />
+        <select required name="select" class="task-category">
+          <option selected>Frontend</option>
+          <option>Backend</option>
+          <option>Design</option>
+        </select>
 
         <button class="task-submit" type="submit">Submit</button>
       </form>
       {{/if}}
-      <span class="user-title">Users</span>
+
       <div class="users-container">
+        <span class="user-title">Users</span>
         {{#each users}}
         <span class="username">{{username}}</span>
         {{/each}}
-      </div>
-      <span class="filter-title">Filters</span>
-      <div class="header-filters">
-        <label class="hide-completed">
-          <input type="checkbox" />
-          Hide Completed Tasks
-        </label>
       </div>
     </header>
     <div class="task-categories">
