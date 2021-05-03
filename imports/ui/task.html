@@ -3,6 +3,7 @@
     class="{{#if checked}}checked{{/if}} task-container {{selection}} {{#if private}}private{{/if}}"
   >
     <div class="checkbox-container {{selection}}">
+      {{#if isOwner}}
       <label class="checkbox-label">
         <input
           type="checkbox"
@@ -11,7 +12,9 @@
         />
         <span class="checkmark {{selection}}"></span>
       </label>
+      {{/if}}
     </div>
+
     <div class="task-body-container">
       <div class="task-contents">
         <span class="task-title">{{text}}</span>
